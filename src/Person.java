@@ -24,12 +24,12 @@ public abstract class Person
 	
 	public String displayBasicDetails()
 	{
-		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber;
+		return "Name: " + name;
 	}
 	
 	public String toString()
 	{
-		return "";
+		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber;
 	}
 	
 	abstract String getRoleDescription();

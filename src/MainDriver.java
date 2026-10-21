@@ -11,9 +11,9 @@ public class MainDriver
 		Member m2 = new Member(2, "Jane Doe", "555-555-5555", 100002, 56, "Premium Membership", 0.00); 
 		Librarian l1 = new Librarian(3, "John Smith", "555-345-1237", 1, "Markham TPL", 6500.00, 37, 20);
 		SeniorLibrarian sl1 = new SeniorLibrarian
-				(4, "John Johnson", "555-825-4497", 2, "Refrence Library", 22000.00, 48, 40, "Classical", 0.02);
+				(4, "John Johnson", "555-825-4497", 2, "Refrence Library", 22000.00, 48, 40, "Classical", 2000);
 		LibraryAssistant la1 = new LibraryAssistant
-				(5, "Jack Johnson", "555-825-4497", 3, "Refrence Library", 3500.00, "Part-Time", 0.05);
+				(5, "Jack Johnson", "555-825-4497", 3, "Refrence Library", 3500.00, "Part-Time", 200);
 		
 		//Object Details
 		System.out.println(m1.displayBasicDetails());
@@ -56,6 +56,8 @@ public class MainDriver
 		//Success and Fail Registration
 		m1.registerMember("Super Membership");
 		m1.registerMember("Premium Membership");
+		m1.registerMember("Premium Membership", -50.00);
+		m1.registerMember("Premium Membership", 50.00);
 	}	
 }
 

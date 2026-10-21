@@ -8,8 +8,7 @@ public class Librarian extends LibraryStaff
 	int booksProcessed;
 	
 	public Librarian(int personId, String name, String phoneNumber, int staffId, 
-			String department, double monthlySalary, int dailyIssueLimit, 
-			int booksProcessed) 
+			String department, double monthlySalary, int dailyIssueLimit, int booksProcessed) 
 	{
 		super(personId, name, phoneNumber, staffId, department, monthlySalary);
 		this.dailyIssueLimit = dailyIssueLimit;
@@ -23,10 +22,8 @@ public class Librarian extends LibraryStaff
 	
 	public void calculateMonthlyCompensation() 
 	{
-		final double processingAllowance = 0.10;
 		final double processingBonus = 2.0;
-		double monthlyCompensation = 
-				((monthlySalary + (processingBonus * booksProcessed)) - (monthlySalary * processingAllowance));
+		double monthlyCompensation = monthlySalary + (processingBonus * booksProcessed);
 		System.out.println(name + "'s monthly compensation is: $" + monthlyCompensation);
 	}
 	

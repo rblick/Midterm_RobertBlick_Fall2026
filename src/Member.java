@@ -55,14 +55,44 @@ public class Member extends Person implements Reservable
 	
 	public void registerMember(String newMembership) 
 	{
-		membershipType = newMembership;
-		if (membershipType == "Basic Membership" || membershipType == "Premium Membership") 
+		if (newMembership == "Basic Membership") 
 		{
+			outstandingFees = outstandingFees + 10.00;
+			System.out.println("Membership successfully changed.");	
+		}
+		else if (newMembership == "Premium Membership")
+		{
+			outstandingFees = outstandingFees + 50.00;
 			System.out.println("Membership successfully changed.");
 		}
 		else 
 		{
 			System.out.println("Memberships are either \"Basic Membership\" or \"Premium Membership\"!");
+		}
+	}
+	
+	public void registerMember(String newMembership, double feePayment) 
+	{
+		if (feePayment > 0)
+		{
+			if (newMembership == "Basic Membership") 
+			{
+				outstandingFees = outstandingFees + (10.00 - feePayment) ;
+				System.out.println("Membership successfully changed. Payment accepted.");	
+			}
+			else if (newMembership == "Premium Membership")
+			{
+				outstandingFees = outstandingFees + (50.00 - feePayment);
+				System.out.println("Membership successfully changed. Payment accepted.");
+			}
+			else 
+			{
+				System.out.println("Memberships are either \"Basic Membership\" or \"Premium Membership\"!");
+			}
+		}
+		else 
+		{
+			System.out.println("Fee payment must be greater than zero.");
 		}
 	}
 }
