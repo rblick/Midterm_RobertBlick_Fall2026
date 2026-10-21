@@ -2,7 +2,7 @@
  * Midterm_RobertBlick_Fall2026
  */
 
-public abstract class LibraryStaff extends Person
+public abstract class LibraryStaff extends Person implements Reportable
 {
 	final int staffId;
 	String department;
@@ -28,6 +28,11 @@ public abstract class LibraryStaff extends Person
 		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber
 				+ ", Person Count: " + personCount + ", Staff ID: " + staffId + ", Department: "
 				+ department + ", Montly Salary: $" + monthlySalary + ", Staff Count: " + staffCount;
+	}
+	
+	public void generateReport() 
+	{
+		System.out.println("Report for" + name +"Generated.");
 	}
 }
 

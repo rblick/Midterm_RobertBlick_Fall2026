@@ -2,7 +2,7 @@
  * Midterm_RobertBlick_Fall2026
  */
 
-public class Member extends Person
+public class Member extends Person implements Reservable
 {
 	final int memberNumber;
 	int age;
@@ -40,10 +40,15 @@ public class Member extends Person
 		return name + "is a member.";
 	}
 	
-	//Finish before submitting 
-	public void registerMember() 
+	public void reserveBook(String bookId) 
 	{
-		
+		System.out.println("Book ID: " + bookId + " successfully reserved.");
+	}
+	
+	public void registerMember(String newMembershipType) 
+	{
+		membershipType = newMembershipType;
+		System.out.println("Membership successfully changed.");
 	}
 }
 

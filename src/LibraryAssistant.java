@@ -21,7 +21,7 @@ public class LibraryAssistant extends LibraryStaff
 		return name + " is a library assistant.";
 	}
 	
-	@Override
+	
 	public void calculateMonthlyCompensation() 
 	{
 		double monthlyCompensation = (monthlySalary - (monthlySalary * shiftAllowance));
