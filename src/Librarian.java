@@ -7,11 +7,11 @@ public class Librarian extends LibraryStaff
 	final int dailyIssueLimit;
 	int booksProcessed;
 	
-	public Librarian(int personId, String name, String phoneNumber, int personCount, int staffId, 
-			String department, double monthlySalary, int staffCount, int dailyIssueLimit, 
+	public Librarian(int personId, String name, String phoneNumber, int staffId, 
+			String department, double monthlySalary, int dailyIssueLimit, 
 			int booksProcessed) 
 	{
-		super(personId, name, phoneNumber, personCount, staffId, department, monthlySalary, staffCount);
+		super(personId, name, phoneNumber, staffId, department, monthlySalary);
 		this.dailyIssueLimit = dailyIssueLimit;
 		this.booksProcessed = booksProcessed;
 	}

@@ -8,11 +8,12 @@ public class Member extends Person implements Reservable
 	int age;
 	String membershipType;
 	double outstandingFees;
+	static int memberCount;
 	
-	public Member(int personId, String name, String phoneNumber, int personCount, int memberNumber,
+	public Member(int personId, String name, String phoneNumber, int memberNumber,
 			int age, String membershipType, double outstandingFees) 
 	{
-		super(personId, name, phoneNumber, personCount);
+		super(personId, name, phoneNumber);
 		this.memberNumber = memberNumber;
 		this.membershipType = membershipType;
 		
@@ -33,6 +34,13 @@ public class Member extends Person implements Reservable
 		{
 			System.out.println("Fee can not be less than zero!");	
 		}
+		
+		memberCount++;
+	}
+	
+	public int getMemberCount() 
+	{
+		return memberCount;
 	}
 	
 	public String getRoleDescription() 
@@ -42,13 +50,20 @@ public class Member extends Person implements Reservable
 	
 	public void reserveBook(String bookId) 
 	{
-		System.out.println("Book ID: " + bookId + " successfully reserved.");
+		System.out.println("Book ID: " + bookId + ", successfully reserved.");
 	}
 	
 	public void registerMember(String newMembership) 
 	{
 		membershipType = newMembership;
-		System.out.println("Membership successfully changed.");
+		if (membershipType == "Basic Membership" || membershipType == "Premium Membership") 
+		{
+			System.out.println("Membership successfully changed.");
+		}
+		else 
+		{
+			System.out.println("Memberships are either \"Basic Membership\" or \"Premium Membership\"!");
+		}
 	}
 }
 

@@ -7,11 +7,11 @@ public class LibraryAssistant extends LibraryStaff
 	final String shiftType ;
 	double shiftAllowance;
 	
-	public LibraryAssistant(int personId, String name, String phoneNumber, int personCount, int staffId, 
-			String department, double monthlySalary, int staffCount, String shiftType, 
+	public LibraryAssistant(int personId, String name, String phoneNumber, int staffId, 
+			String department, double monthlySalary, String shiftType, 
 			double shiftAllowance) 
 	{
-		super(personId, name, phoneNumber, personCount, staffId, department, monthlySalary, staffCount);
+		super(personId, name, phoneNumber, staffId, department, monthlySalary);
 		this.shiftType = shiftType;
 		this.shiftAllowance = shiftAllowance;
 	}
@@ -34,9 +34,8 @@ public class LibraryAssistant extends LibraryStaff
 	public String displayStaffDetails() 
 	{
 		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber
-				+ ", Person Count: " + personCount + ", Staff ID: " + staffId + ", Department: "
-				+ department + ", Montly Salary: $" + monthlySalary + ", Staff Count: " + staffCount
-				+ ", Shift Type: " + shiftType + ", Shift Allowance" + shiftAllowance;
+				+ ", Staff ID: " + staffId + ", Department: " + department + ", Montly Salary: $" 
+				+ monthlySalary + ", Shift Type: " + shiftType + ", Shift Allowance" + shiftAllowance;
 	}
 }
 

@@ -9,12 +9,27 @@ public abstract class Person
 	String phoneNumber;
 	static int personCount;
 	
-	public Person(int personId, String name, String phoneNumber, int personCount) 
+	public Person(int personId, String name, String phoneNumber) 
 	{
 		this.personId = personId;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.personCount = personCount;
+		personCount++;
+	}
+	
+	public int getPersonCount() 
+	{
+		return personCount;
+	}
+	
+	public String displayBasicDetails()
+	{
+		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber;
+	}
+	
+	public String toString()
+	{
+		return "";
 	}
 	
 	abstract String getRoleDescription();

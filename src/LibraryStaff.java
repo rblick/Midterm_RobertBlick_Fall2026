@@ -9,15 +9,19 @@ public abstract class LibraryStaff extends Person implements Reportable
 	double monthlySalary;
 	static int staffCount;
 	
-	public LibraryStaff(int personId, String name, String phoneNumber, int personCount, int staffId, 
-			String department, double monthlySalary, int staffCount) 
+	public LibraryStaff(int personId, String name, String phoneNumber, int staffId, 
+			String department, double monthlySalary) 
 	{
-		super(personId, name, phoneNumber, personCount);
+		super(personId, name, phoneNumber);
 		this.staffId = staffId;
 		this.department = department;
 		this.monthlySalary = monthlySalary;
-		this.staffCount = staffCount;
+		staffCount++;
+	}
 	
+	public int getStaffCount() 
+	{
+		return staffCount;
 	}
 	
 	abstract String getRoleDescription();
@@ -25,14 +29,13 @@ public abstract class LibraryStaff extends Person implements Reportable
 	
 	public String displayStaffDetails() 
 	{
-		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber
-				+ ", Person Count: " + personCount + ", Staff ID: " + staffId + ", Department: "
-				+ department + ", Montly Salary: $" + monthlySalary + ", Staff Count: " + staffCount;
+		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber + ", Staff ID: " 
+				+ staffId + ", Department: " + department + ", Montly Salary: $" + monthlySalary;
 	}
 	
 	public void generateReport() 
 	{
-		System.out.println("Report for" + name +"Generated.");
+		System.out.println("Report for " + name +" generated.");
 	}
 }
 

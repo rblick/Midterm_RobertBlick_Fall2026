@@ -7,11 +7,11 @@ public class SeniorLibrarian extends Librarian
 	final String specialization;
 	double seniorityAllowance;
 
-	public SeniorLibrarian(int personId, String name, String phoneNumber, int personCount, int staffId, 
-			String department, double monthlySalary, int staffCount, int dailyIssueLimit, 
+	public SeniorLibrarian(int personId, String name, String phoneNumber, int staffId, 
+			String department, double monthlySalary, int dailyIssueLimit, 
 			int booksProcessed, String specialization, double seniorityAllowance) 
 	{
-		super(personId, name, phoneNumber, personCount, staffId, department, monthlySalary, staffCount, 
+		super(personId, name, phoneNumber, staffId, department, monthlySalary, 
 				dailyIssueLimit, booksProcessed);
 		
 		this.specialization = specialization;
@@ -38,9 +38,8 @@ public class SeniorLibrarian extends Librarian
 	@Override
 	public String displayStaffDetails() 
 	{
-		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber
-				+ ", Person Count: " + personCount + ", Staff ID: " + staffId + ", Department: "
-				+ department + ", Montly Salary: $" + monthlySalary + ", Staff Count: " + staffCount
+		return "Person ID: " + personId + ", Name: " + name + ", Phone Number: " + phoneNumber + ", Staff ID: " 
+				+ staffId + ", Department: " + department + ", Montly Salary: $" + monthlySalary 
 				+ ", Daily Issue Limit: " + dailyIssueLimit + ", Books Processed: " + booksProcessed
 				+ ", Specialization: " + specialization + ", Seniority Allowance: " + seniorityAllowance;
 	}
