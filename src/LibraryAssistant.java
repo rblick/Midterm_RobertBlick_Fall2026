@@ -24,7 +24,9 @@ public class LibraryAssistant extends LibraryStaff
 	
 	public void calculateMonthlyCompensation() 
 	{
-		double monthlyCompensation = (monthlySalary - (monthlySalary * shiftAllowance));
+		final double processingAllowance = 0.05;
+		double monthlyCompensation = 
+				monthlySalary - ((monthlySalary * shiftAllowance) + (monthlySalary * processingAllowance));
 		System.out.println(name + "'s monthly compensation is: $" + monthlyCompensation);
 	}
 	

@@ -45,9 +45,9 @@ public class Member extends Person implements Reservable
 		System.out.println("Book ID: " + bookId + " successfully reserved.");
 	}
 	
-	public void registerMember(String newMembershipType) 
+	public void registerMember(String newMembership) 
 	{
-		membershipType = newMembershipType;
+		membershipType = newMembership;
 		System.out.println("Membership successfully changed.");
 	}
 }

@@ -22,10 +22,16 @@ public class SeniorLibrarian extends Librarian
 	{
 		return name + " is a senior librarian.";
 	}
-
+	
+	@Override
 	public void calculateMonthlyCompensation() 
 	{
-		double monthlyCompensation = (monthlySalary - (monthlySalary * seniorityAllowance));
+		final double processingAllowance = 0.20;
+		final double processingBonus = 2.0;
+		double monthlyCompensation = 
+				(monthlySalary + (processingBonus * booksProcessed)) 
+				- ((monthlySalary * processingAllowance) + (monthlySalary * seniorityAllowance));
+		
 		System.out.println(name + "'s monthly compensation is: $" + monthlyCompensation);
 	}
 	

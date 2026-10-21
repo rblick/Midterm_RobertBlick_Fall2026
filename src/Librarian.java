@@ -23,16 +23,46 @@ public class Librarian extends LibraryStaff
 	
 	public void calculateMonthlyCompensation() 
 	{
-		final double processingAllowance = 0.1;
-		double monthlyCompensation = (monthlySalary - (monthlySalary * processingAllowance));
+		final double processingAllowance = 0.10;
+		final double processingBonus = 2.0;
+		double monthlyCompensation = 
+				((monthlySalary + (processingBonus * booksProcessed)) - (monthlySalary * processingAllowance));
 		System.out.println(name + "'s monthly compensation is: $" + monthlyCompensation);
 	}
 	
-	public void calculateLateFee(int daysLate) 
+	public void calculateLateFee(int daysOverdue) 
 	{
-		final double dailyLateFee = 0.01;
-		double lateFees = (daysLate * dailyLateFee);
-		System.out.println("Late fees are: $" + lateFees);
+		double dailyRate = 1.00;
+		
+		if (daysOverdue >= 0) 
+		{
+			double lateFees = (daysOverdue * dailyRate);
+			System.out.println("Late fees are: $" + lateFees);	
+		}
+		else 
+		{
+			System.out.println("Days overdue must be a possitive ammount.");
+		}
+	}
+	
+	public void calculateLateFee(int daysOverdue, double dailyRate) 
+	{
+		if (daysOverdue >= 0) 
+		{
+			if (dailyRate >= 0) 
+			{
+				double lateFees = (daysOverdue * dailyRate);
+				System.out.println("Late fees are: $" + lateFees);	
+			}
+			else 
+			{
+				System.out.println("Daily rate must be a valid ammount!");
+			}	
+		}
+		else 
+		{
+			System.out.println("Days overdue must be a possitive ammount!");
+		}
 	}
 	
 }
